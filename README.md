@@ -27,3 +27,6 @@
 - Необходимо отправить POST запрос с файлом на endpoint ```api/v1/import-materials/```.
 - Формат файла в примере ```example.xlsx```. Также необходимо указать id категории.
 
+## Динамическая документация
+- Endpoint `redoc/` - документация Redoc.
+- Endpoint `swagger/` - документация Swagger.
