@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from rest_framework.relations import SlugRelatedField
 
 from catalog.models import Material, Category
 
@@ -6,7 +7,10 @@ from catalog.models import Material, Category
 class MaterialSerializer(serializers.ModelSerializer):
     """Serializer for materials."""
 
-    category = serializers.SlugRelatedField(slug_field='name', read_only=True)
+    category = serializers.SlugRelatedField(
+        slug_field='name',
+        queryset=Category.objects.all()
+    )
 
     class Meta:
         model = Material
@@ -24,7 +28,11 @@ class MaterialInTreeSerializer(serializers.ModelSerializer):
 class CategorySerializer(serializers.ModelSerializer):
     """Serializer for categories."""
 
-    parent = serializers.SlugRelatedField(slug_field='name', read_only=True)
+    parent = serializers.SlugRelatedField(
+        slug_field='name',
+        queryset=Category.objects.all(),
+        required=False
+    )
 
     class Meta:
         model = Category
@@ -34,6 +42,7 @@ class CategorySerializer(serializers.ModelSerializer):
 class TreeSerializer(serializers.ModelSerializer):
     """Serializer for tree."""
 
+    parent = SlugRelatedField(slug_field='name', read_only=True)
     materials = serializers.SerializerMethodField()
     children = serializers.SerializerMethodField()
     total_price = serializers.SerializerMethodField()
