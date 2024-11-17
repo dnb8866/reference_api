@@ -1,0 +1,8 @@
+.idea/
+.venv/
+tests/
+**/__pycache__/*
+README.md
+Dockerfile
+docker-compose.yml
+.env.example
