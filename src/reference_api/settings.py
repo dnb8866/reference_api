@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'drf_yasg',
+    'mptt',
     'rest_framework',
     'catalog.apps.CatalogConfig'
 ]
