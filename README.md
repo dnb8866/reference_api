@@ -28,5 +28,5 @@
 - Формат файла в примере ```example.xlsx```. Также необходимо указать id категории.
 
 ## Динамическая документация
-- Endpoint `redoc/` - документация Redoc.
-- Endpoint `swagger/` - документация Swagger.
+- Endpoint `localhost:8000/redoc/` - документация Redoc.
+- Endpoint `localhost:8000/swagger/` - документация Swagger.
