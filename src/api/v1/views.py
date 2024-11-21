@@ -3,7 +3,6 @@ from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-
 from catalog.models import Material, Category
 from .serializers import MaterialSerializer, TreeSerializer, CategorySerializer
 
@@ -58,5 +57,3 @@ class MaterialImportView(APIView):
                 status=status.HTTP_400_BAD_REQUEST
             )
         return Response({'status': 'Success upload data from file.'})
-
-
